@@ -22,6 +22,7 @@ Another variant is the "singletonish" pattern taking advantage of Node.js module
 Every call to require(‘score’) will get exactly the same object returned since modules are 
 cached after the first time they're loaded. The -ish is since it's not 100% foolproof.
 
+```
 class Singleton {
     constructor() {
         this.message = 'I am an instance';
