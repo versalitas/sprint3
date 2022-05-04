@@ -1,4 +1,4 @@
-## The Observer Pattern 
+# The Observer Pattern 
 
 
 __The challenge__ is to write an app that creates different users. The app can create different themes and subscribe the users to them. When a user adds a message to a theme, an alert is sent to the console. All the users subscribed to the theme are displayed on the console (receive the message). Create a theme with a user y another one with two and show the reception of the messages of the users. Use module events
