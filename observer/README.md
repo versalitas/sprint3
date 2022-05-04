@@ -1,7 +1,7 @@
 # The Observer Pattern 
 
 
-__The challenge__ is to write an app that creates different users. The app can create different themes and subscribe the users to them. When a user adds a message to a theme, an alert is sent to the console. All the users subscribed to the theme are displayed on the console (receive the message). Create a theme with a user y another one with two and show the reception of the messages of the users. Use module events
+__The challenge__ is to write an app that creates different users. The app can create different themes and subscribe the users to them. When a user adds a message to a theme, an alert is sent to the console. All the users subscribed(i.e who receive the message) to the theme are displayed on the console. Create a theme with a user y another one with two users and show the reception of the messages of the users. 
 
 
 
@@ -10,7 +10,7 @@ This means that is concerned about __communication between objects__.
 
 The pattern takes care of the communication between a __Subject__ (Observable / objects with methods) and multiple __observers__. The subject target is to notify observers the state changes. Observers can __subscribe__ to the subject to keep track of any change of state of the subject. Observers can __unsubscribe__ as well, stopping to watch the subject.
 
-In Node.js the Observer Pattern is available through __EventEmitter__ class.
+In Node.js the Observer Pattern is available through __EventEmitter__ class. (Module: events)
 EventEmitter allows to register functions as listeners, that will be called when an specific event is fired.
 
 The EventEmitter class is defined and exposed by the events module.
