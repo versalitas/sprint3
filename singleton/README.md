@@ -18,14 +18,14 @@ Node.js modules caching system is an advantage when creating Singleton patterns.
 
 Every call to require(‘score’) will get exactly the same object returned, since modules are cached after the first time they're loaded.
 
---
+//
 class Singleton {
     constructor() {
         this.message = 'I am an instance';
     }
 }
 module.exports = new Singleton();
---
+//
 
 The instance of the class is exported module.exports = new Singleton(). Node.JS will cache and reuse the same object each time it’s required.
 
