@@ -1,5 +1,57 @@
 {
+  "name": "callbackhell",
+  "version": "1.0.0",
+  "description": "refactored callback hell",
+  "main": "index.js",
   "dependencies": {
-    "util": "^0.12.4"
-  }
+    "available-typed-arrays": "^1.0.5",
+    "call-bind": "^1.0.2",
+    "define-properties": "^1.1.4",
+    "es-abstract": "^1.19.5",
+    "es-to-primitive": "^1.2.1",
+    "foreach": "^2.0.5",
+    "function-bind": "^1.1.1",
+    "get-intrinsic": "^1.1.1",
+    "get-symbol-description": "^1.0.0",
+    "has": "^1.0.3",
+    "has-bigints": "^1.0.2",
+    "has-property-descriptors": "^1.0.0",
+    "has-symbols": "^1.0.3",
+    "has-tostringtag": "^1.0.0",
+    "inherits": "^2.0.4",
+    "internal-slot": "^1.0.3",
+    "is-arguments": "^1.1.1",
+    "is-bigint": "^1.0.4",
+    "is-boolean-object": "^1.1.2",
+    "is-callable": "^1.2.4",
+    "is-date-object": "^1.0.5",
+    "is-generator-function": "^1.0.10",
+    "is-negative-zero": "^2.0.2",
+    "is-number-object": "^1.0.7",
+    "is-regex": "^1.1.4",
+    "is-shared-array-buffer": "^1.0.2",
+    "is-string": "^1.0.7",
+    "is-symbol": "^1.0.4",
+    "is-typed-array": "^1.1.8",
+    "is-weakref": "^1.0.2",
+    "object-inspect": "^1.12.0",
+    "object-keys": "^1.1.1",
+    "object.assign": "^4.1.2",
+    "safe-buffer": "^5.2.1",
+    "side-channel": "^1.0.4",
+    "string.prototype.trimend": "^1.0.4",
+    "string.prototype.trimstart": "^1.0.4",
+    "unbox-primitive": "^1.0.2",
+    "util": "^0.12.4",
+    "which-boxed-primitive": "^1.0.2",
+    "which-typed-array": "^1.1.7"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "callbacks"
+  ],
+  "author": "MK",
+  "license": "ISC"
 }

@@ -1,16 +1,19 @@
 // import all that is requiered
+const {Game} = require('./game');
 
-// declare an instance of the game
-
-//requiere modules
+// declare instance of the game
+const game = new Game();
 
 // add participant
+game.addPlayer("Anne");
+game.addPlayer("Bo");
+game.addPlayer("Charlotte");
+game.addPlayer("Deedee");
+game.addPlayer("Elmer");
+game.addPlayer("Fanny");
+game.addPlayer("George");
+game.addPlayer("Hannah");
 
-// add score
-// remove score
 
-// add score to scoreboard
-
-// show winner
-
-// show score
+//Let the game start...hopefully!!!
+game.play();

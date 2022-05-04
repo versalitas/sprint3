@@ -6,19 +6,26 @@ const Score = require("./score.js");
 
 class Game{
 
-    constructor{
-    this.players = [];
-     // define scoreboard
+    constructor(){
+    
+     this.gamePlayers = [];
      this.scoreBoard = new Score();
-}
-
+     // define scoreboard
+     
+    }
     //add player to game
     
-    const addPlayer = (playerName) =>
-     this.players.push(new Player(playerName));
+    addPlayer (playerName) {
+    const player = new Player(playerName);
+    return this.gamePlayers.push(player);
+    }
 
- }
+    eliminatePlayer (playerName) {
+        
 
+     
+    }
+    
 
 
 //export
