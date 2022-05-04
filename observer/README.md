@@ -15,7 +15,7 @@ EventEmitter allows to register functions as listeners, that will be called when
 
 The EventEmitter class is defined and exposed by the events module.
 
-Some methods available:
+### Some methods available:
 Observable: eventName 
 Observers: listener. 
 
