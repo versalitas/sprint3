@@ -10,17 +10,24 @@ The players can be added to the game. A score counter tracks the scores and the 
 The game can add and substract from each player's score thus the score counter class should be 
 implemented with the singleton pattern.*/
 
+One variant would be:
 
-
-
-
-
+```
+class Singleton {
+  constructor() {
+    if (!Singleton._instance) {
+      Singleton._instance = this;
+    }
+    return Singleton._instance;
+  }
+}
+```
+Source: https://bretcameron.medium.com/singletons-in-javascript-59655927b7d7
 
 Another variant is the "singletonish" pattern taking advantage of Node.js modules caching system. 
-(based on https://medium.com/swlh/node-js-and-singleton-pattern-7b08d11c726a)
+(source: https://medium.com/swlh/node-js-and-singleton-pattern-7b08d11c726a)
 
-Every call to require(‘score’) will get exactly the same object returned since modules are 
-cached after the first time they're loaded. The -ish is since it's not 100% foolproof.
+Every call to require(‘score’) will get exactly(though not in all circumstances) the same object returned since modules are cached after the first time they're loaded. The -ish is since it's not 100% foolproof.
 
 ```
 class Singleton {
