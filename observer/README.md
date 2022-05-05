@@ -52,4 +52,5 @@ Creating an observable directly from EventEmitter class is not flexible enough w
 
 
 
-source: https://itnext.io/the-observer-pattern-in-nodejs-c0cfffb4744a
+source list: https://itnext.io/the-observer-pattern-in-nodejs-c0cfffb4744a
+https://betterprogramming.pub/the-observer-pattern-in-javascript-4f4e0b908d5e
