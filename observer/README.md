@@ -24,9 +24,9 @@ Observers: listener.
 on(eventName:string, listener: Function):
 ```
 
-Adds the listener function to the end of the listeners array for the event named eventName.
-No checks are made to see if the listener has already been added. 
-Multiple calls passing the same combination of eventName and listener will result in the listener being added, and called, multiple times.
+Assigns a listener callback function to a named event.
+No checks are made to see if the listener has already been added to the array list. 
+Multiple calls passing the same combination results in the listener being added, and called, multiple times.
 
 ```
 once(eventName:string, listener: Function) 
