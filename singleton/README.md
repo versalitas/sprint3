@@ -45,6 +45,6 @@ Node.JS will cache and reuse the same object each time it’s required.
 
 
 Implementing singleton patterns.
+https://medium.com/@maheshkumawat_83392/node-js-design-patterns-singleton-pattern-series-1-1e0ab71e3edf
 https://stackoverflow.com/questions/53023332/javascript-good-way-to-create-or-design-singleton-class
-https://ozenero.com/how-to-implement-singleton-in-node-js-example
 https://www.digitalocean.com/community/tutorials/js-js-singletons
