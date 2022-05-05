@@ -29,7 +29,7 @@ Source: https://bretcameron.medium.com/singletons-in-javascript-59655927b7d7
 Another variant is the "singletonish" pattern taking advantage of Node.js modules caching system. 
 (source: https://medium.com/swlh/node-js-and-singleton-pattern-7b08d11c726a)
 
-Every call to require(‘score’) will get exactly (though unfortunately not in all circumstances) the same object returned since modules are cached after the first time they're loaded. The -ish is since it's not 100% foolproof.
+Every call to require(‘singleton’) will get exactly (though unfortunately not in all circumstances) the same object returned since modules are cached after the first time they're loaded. The "-ish" indicates it's not 100% foolproof.
 
 ```
 class Singleton {
