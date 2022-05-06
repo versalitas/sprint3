@@ -1,45 +1,47 @@
+
+//this class is implemented as singleton
+
+
+
 class Score {
  
   constructor(){
-    this.score = [];
-    if (!instance) {
-      instance = this;
+    
+    if (!Score.instance) {
+      Score.instance = this;
+      this.score = [];
     }
 
-    return instance;
+    return Score.instance;
+  
   }
-  //method addScore
-  uppDateScore(playerName) { 
-    let score = Math.random() * 10 + 1;
-    let sign = (Math.floor(Math.random() * 2) % 2 === 0 ); 
-    
-    const playerIndex = this.scoreBoard.findIndex(player => player.name === playerName);
-    if (playerIndex > -1 && sign) {
-       this.score[playerIndex].scores += score;
-    } 
-    if (playerIndex > -1 && sign === false) {
-        this.score[playerIndex].scores -= score;
-    } 
-    
-  }
-  /*
-  //method removeScore
-  removeScore(playerName, score){
+
+
+  addScore(playerName) { 
+    let newScore = Math.random() * 10 + 1;
     const playerIndex = this.score.findIndex(player => player.name === playerName);
     if(playerIndex > -1) {
-      this.score[playerIndex].scores -= score; 
+       this.score[playerIndex].scores += newScore;
     }
-
   }
-  */
-   showWinner(){
-   console.log(`And the winner is ${this.score.sort()[0].player}!`);
-   }
-   
+
+  
+ 
+  removeScore(playerName, score){
+    let newScore = Math.random() * 10 + 1;
+    const playerIndex = this.score.findIndex(player => player.name === playerName);
+    if(playerIndex > -1) {
+      this.score[playerIndex].scores -= newScore;
+    }
+  }
+
+ 
+  
+   // to do sort out score
    showScore(){
     console.log(`Scoreboard: ${this.score.sort()}`);
    }
  
 }
 
-module.exports = Score();
+module.exports = Score;

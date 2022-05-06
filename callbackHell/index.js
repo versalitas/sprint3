@@ -21,10 +21,14 @@ const reverseText = str =>
   .join("");
 
  
-
+// en sprint 1 me topé con promisify. 
+// muy cómodo pero no sé cómo mantener
+// los mensajes de error más diversificados
+// del resultado
 const pReaddir = promisify(readdir);
 const pReadFile = promisify(readFile);
 const pWriteFile = promisify(writeFile);
+
 
 
 const reverseReadSave = async () => {

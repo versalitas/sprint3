@@ -1,5 +1,6 @@
 // import all that is requiered
-const {Game} = require('./game');
+const Game = require('./game');
+//const prompt = require('prompt-sync')({sigint: true});
 
 // declare instance of the game
 const game = new Game();
@@ -16,4 +17,17 @@ game.addPlayer("Hannah");
 
 
 //Let the game start...hopefully!!!
-game.play();
+
+//const turns = prompt('How many turns do you want to play?')
+//turns = Number(turns);
+let turns = 8;
+game.play(turns);
+game.showWinner();
+
+
+
+
+
+
+
+//https://www.codecademy.com/article/getting-user-input-in-node-js

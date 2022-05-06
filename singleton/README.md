@@ -6,6 +6,13 @@ added to the game. A score counter tracks the scores and the winner. The game ca
 ## Singleton Pattern
 
 
+```
+
+node app.js
+
+```
+
+
 Singleton is an object/ class restricted to having a single, unique instance, 
 with a single point of access. We need to ensure that the constructor is called 
 only once and to reuse that instance.
@@ -47,4 +54,5 @@ Node.JS will cache and reuse the same object each time it’s required.
 Implementing singleton patterns.
 https://medium.com/@maheshkumawat_83392/node-js-design-patterns-singleton-pattern-series-1-1e0ab71e3edf
 https://stackoverflow.com/questions/53023332/javascript-good-way-to-create-or-design-singleton-class
+https://stackoverflow.com/questions/1479319/simplest-cleanest-way-to-implement-a-singleton-in-javascript
 https://www.digitalocean.com/community/tutorials/js-js-singletons
