@@ -5,9 +5,9 @@ The goal is to start implementing patterns for advance structures deployed when 
 
 Specific themes:
 
-* Creation Patterns.
+* Creational Patterns.
 
-* Structure patterns.
+* Structural patterns.
 
 * Behavioral patterns
 
