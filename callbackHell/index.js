@@ -2,7 +2,7 @@
 //El codi adjunt llegeix un fitxer situat en un directori inbox i escriu el seu 
 //contingut invertit en un altre fitxer al directori outbox. 
 //Reestructura i simplifiqui el codi existent per a evitar el denominat Callback Hell.
-//vaya lío esto... seguro que no te gusta promisify y tendría que aber utilizado promise
+
 
 
 
@@ -21,10 +21,14 @@ const reverseText = str =>
   .join("");
 
  
-
+// en sprint 1 me topé con promisify. 
+// muy cómodo pero no sé cómo mantener
+// los mensajes de error más diversificados
+// del resultado
 const pReaddir = promisify(readdir);
 const pReadFile = promisify(readFile);
 const pWriteFile = promisify(writeFile);
+
 
 
 const reverseReadSave = async () => {
