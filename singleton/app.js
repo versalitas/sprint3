@@ -1,5 +1,5 @@
 
-// import all that is requiered
+// import all that is requiered 
 const Game = require('./game');
 //const prompt = require('prompt-sync')({sigint: true});
 
@@ -19,9 +19,13 @@ game.addPlayer("Indy");
 game.addPlayer("Louise");
 
 
-//Let the game start...hopefully!!!
+//Let the game start...!!!
 //const turns = prompt('How many turns do you want to play?')
 //turns = Number(turns);
 
-let turns = 1;
-game.play(turns);
+let turns = 7;
+
+ 
+
+
+game.playGame(turns);
