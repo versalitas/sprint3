@@ -41,27 +41,7 @@ class Game{
             }
         }
      }
-   /* 
-    //play a kind of yatzy game 
-    play(turns){
-        
-        //let isTongo = false;
-        
-        if (turns > 0) {  
-            for(let i = 0; i < turns; i++ ){
-                for (let j = 0; j < this.scoreBoard.score.length; j++){
-                    //isTongo = ((Math.random() * 10) === 1);
-                    //if(isTongo) {
-                     //   removeScore(this.player[j].name);
-                    //} else {
-                        addScore(this.player[j].name);
-                    }
-                } 
-            //}
-        } else {
-            console.log('Bye, bye');
-        }   
-    }*/
+   
 }
 //export
 module.exports = Game;
