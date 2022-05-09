@@ -22,10 +22,8 @@ class Game{
     return this.players.push(player)
     }
     
-
-   
-//a bit bizarre iterating through the gamer list and then calling
-//methods based on looking up index...
+    //a bit bizarre iterating through the gamer list and then calling
+    //methods based on looking up index...
     playGame(turns){
 
         let isTongo = false;
@@ -37,9 +35,11 @@ class Game{
                 } else { 
                     addScore(this.player[j].name);
                 }
-
             }
         }
+
+        this.scoreBoard.showWinner();
+        this.scoreBoard.showScore();
      }
    
 }
