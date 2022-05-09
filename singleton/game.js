@@ -26,8 +26,8 @@ class Game{
     //methods based on looking up index...
     playGame(turns){
 
-        let isTongo = false;
-        for(let i = 0; i < turns; i++){
+    let isTongo = false;
+    for(let i = 0; i < turns; i++){
             for(let j = 0; j < this.player.length; j++){
                 isTongo = ((Math.random() * 10) === 1); 
                 if(isTongo){
