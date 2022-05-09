@@ -1,98 +1,55 @@
 
-<<<<<<< HEAD
-=======
-//this class is implemented as singleton
-
-
->>>>>>> 07b7f4abd8d37b7cf6fc40c57dbbc36244f31484
+// one minute to learn and a lifetime to master... fourth version... sigh!!!
+//https://stackoverflow.com/questions/
+//1479319/simplest-cleanest-way-to-implement-a-singleton-in-javascript
+// https://medium.com/swlh/node-js-and-singleton-pattern-7b08d11c726a
 
 class Score {
-  
   constructor(){
     
-<<<<<<< HEAD
-    this.score = []
-    if (!instance) {
-      instance = this;
-  }
-=======
-    if (!Score.instance) {
-      Score.instance = this;
+    if(!this.instance){
+      this.instance = this; 
       this.score = [];
-    }
->>>>>>> 07b7f4abd8d37b7cf6fc40c57dbbc36244f31484
-
-    return Score.instance;
-  
+     
+  }
+  return this.instance;
   }
 
-
-<<<<<<< HEAD
-
-// https://medium.com/swlh/node-js-and-singleton-pattern-7b08d11c726a
-/*
-  class Score  {
-    constructor() {
-        throw new Error('Use Score.getInstance()');
-    }
-     static getInstance() {
-        if (!Score.instance) {
-            Score.instance = new PrivateScore();
-        }
-        return Score.instance;
-    }
-
-  */
-
-  //method addScore
-  upDateScore(playerName) { 
+   //method addScore
+   addScore(playerName){ 
     let score = Math.random() * 10 + 1;
     let playerIndex = this.score.findIndex(player => player.name === playerName);
     if(playerIndex > -1) {
-       this.score[playerIndex].scores += score;
-=======
-  addScore(playerName) { 
-    let newScore = Math.random() * 10 + 1;
-    const playerIndex = this.score.findIndex(player => player.name === playerName);
-    if(playerIndex > -1) {
-       this.score[playerIndex].scores += newScore;
->>>>>>> 07b7f4abd8d37b7cf6fc40c57dbbc36244f31484
+       this.score[playerIndex] += score;
     }
   }
 
   
-<<<<<<< HEAD
-  removeScore(playerName){
+   removeScore(playerName){
     let score = Math.random() * 10 + 1;
-    const playerIndex = this.scoreBoard.findIndex(player => player.name === playerName);
+    const playerIndex = this.score.findIndex(player => player.name === playerName);
     if(playerIndex > -1) {
-      this.score[playerIndex].scores -= score;
+      this.score[playerIndex] -= score;
    }
 
   }
-   showWinner(){
-   console.log(`And the winner is ${this.score.sort()[0].player}!`);
-   }
+   //show score
    
   showScore(){
-   console.log(`Scoreboard: ${this.score}`);
-=======
+   const sortedScore = this.score.sort((a,b) => {return b.score -a.score});
+   console.log(`Scoreboard: ${sortedScore}`);
+   }
  
-  removeScore(playerName, score){
-    let newScore = Math.random() * 10 + 1;
-    const playerIndex = this.score.findIndex(player => player.name === playerName);
-    if(playerIndex > -1) {
-      this.score[playerIndex].scores -= newScore;
-    }
+
+  //showWinner
+
+  showWinner(){
+    const sortedScore = this.score.sort((a,b) => {return b.score -a.score});
+    console.log(`The winner is ${sortedScore[0].name}`);
+  
   }
 
- 
-  
-   // to do sort out score
-   showScore(){
-    console.log(`Scoreboard: ${this.score.sort()}`);
->>>>>>> 07b7f4abd8d37b7cf6fc40c57dbbc36244f31484
-   }
- }
+
+}
 
 module.exports = Score;
