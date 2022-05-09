@@ -23,6 +23,5 @@ game.addPlayer("Louise");
 //const turns = prompt('How many turns do you want to play?')
 //turns = Number(turns);
 
-let turns = 0;
+let turns = 1;
 game.play(turns);
-//game.score.showWinner();

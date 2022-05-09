@@ -1,5 +1,5 @@
 
-// one minute to learn and a lifetime to master... fourth version... sigh!!!
+// one minute to learn and a lifetime to master...!!!
 //https://stackoverflow.com/questions/
 //1479319/simplest-cleanest-way-to-implement-a-singleton-in-javascript
 // https://medium.com/swlh/node-js-and-singleton-pattern-7b08d11c726a
@@ -12,7 +12,7 @@ class Score {
       this.score = [];
      
   }
-  return this.instance;
+   return this.instance;
   }
 
    //method addScore
@@ -36,19 +36,18 @@ class Score {
    //show score
    
   showScore(){
-   const sortedScore = this.score.sort((a,b) => {return b.score -a.score});
-   console.log(`Scoreboard: ${sortedScore}`);
+    const sortedScore = this.score.sort((a,b) => {return b.score - a.score});
+    console.log(`Scoreboard: ${sortedScore}`);
    }
  
 
   //showWinner
 
   showWinner(){
-    const sortedScore = this.score.sort((a,b) => {return b.score -a.score});
+    const sortedScore = this.score.sort((a,b) => {return b.score - a.score});
     console.log(`The winner is ${sortedScore[0].name}`);
   
   }
-
 
 }
 
