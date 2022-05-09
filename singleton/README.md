@@ -5,6 +5,18 @@ added to the game. A score counter tracks the scores and the winner. The game ca
 
 ## Singleton Pattern
 
+if (node installed):
+
+´´´
+node app.js
+
+´´´
+
+else
+
+´´´
+´´´
+
 
 Singleton is an object/ class restricted to having a single, unique instance, 
 with a single point of access. We need to ensure that the constructor is called 
