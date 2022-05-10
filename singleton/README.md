@@ -5,7 +5,8 @@ added to the game. A score counter tracks the scores and the winner. The game ca
 
 ## Singleton Pattern
 
-if (node installed):
+Execute from a terminal initiated within the singleton folder.
+
 
 ´´´
 node app.js

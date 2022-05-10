@@ -23,16 +23,14 @@ class Game {
         return this.scoreBoard.scoreCount.findIndex(obj => obj.name === playerName);
     }
     
-   
-    
-   //method addScore
+    //method addScore
     addScore(playerName, score){ 
         let playerIndex = this.findPlayerIndex(playerName);
         //random dice score generator
         if(playerIndex > -1) {
             this.scoreBoard.scoreCount[playerIndex].score(score);
         }
-   } 
+    } 
 
    removeScore(playerName){
        let playerIndex = this.findPlayerIndex(playerName);
