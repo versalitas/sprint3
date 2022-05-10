@@ -1,4 +1,4 @@
-
+# !!!IN PROGRESS barebone structure!!!!
 
 __The challenge:__ an app that creates different users, different themes, and subscribes the users to them. When a user adds a message to a theme, an alert is displayed on the console. All the subscribers to a theme (i.e who receive the message) are displayed to the console. Create a theme with a user and another one with two users, and show the reception of the messages of the users. 
 
