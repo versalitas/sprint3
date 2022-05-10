@@ -24,7 +24,17 @@ const reverseText = str =>
 // en sprint 1 me topé con promisify. 
 // muy cómodo pero no sé cómo mantener
 // los mensajes de error más diversificados
-// del resultado
+// que obtendría refactorando con promesas y .then
+/* const getFileNames = () => {
+   return new Promise((resolve, reject) => {
+    fs.readdir(inbox, (error, filenames) => {
+        error? reject('Folder inaccessible') : resolve(filenames);
+    })
+})
+}*/
+
+
+
 const pReaddir = promisify(readdir);
 const pReadFile = promisify(readFile);
 const pWriteFile = promisify(writeFile);
@@ -46,3 +56,5 @@ const reverseReadSave = async () => {
 
 
 reverseReadSave();
+
+

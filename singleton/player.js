@@ -4,7 +4,7 @@ class Player{
         this._name = playerName;
         this._score = 0; 
    }
-
+    //getster
     get name(){
      return this._name;
     }
@@ -13,6 +13,7 @@ class Player{
         return this._score;
     }
     
+    //setter
     set score(scores){
     this._score += scores;
     }

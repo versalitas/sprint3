@@ -24,8 +24,13 @@ game.addPlayer("Louise");
 //turns = Number(turns);
 
 let turns = 7;
+game.playGame(turns);
 
  
 
 
-game.playGame(turns);
+//a bit bizarre iterating through the gamer list and then calling
+    //methods based on looking up index...
+    
+
+
