@@ -1,11 +1,17 @@
 
-const ShoppingCart = require('./shoppingCart');
+const ShoppingCart = require('./shoppingcart');
 
 const shoppingCart = new ShoppingCart();
 
-shoppingCart.addToCart();
-shoppingCart.convertToEuro();
-shoppingCart.
+let selectionArray = shoppingCart.unPack();
+shoppingCart.addToCart(selectionArray);
+shoppingCart.convertCartToEuro();
+shoppingCart.totalSumEuro();
+shoppingCart.checkOut();
+
+
+
+
 
    
     

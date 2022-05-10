@@ -1,9 +1,12 @@
+
 class Products{
-    
-    constructor({name, price, currency}){
-    this.name = obj.name;
-    this.price = obj.price;
-    this.currency = obj.currency;
+    //properties passed from JSON
+    constructor(obj){
+        for (let prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
+              this[prop] = obj[prop];
+            }
+        }
     }
 }
 

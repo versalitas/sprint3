@@ -1,39 +1,51 @@
-const {unPackJSON} = require(`./decorator`);
+
 const {convertToEuro} = require('./decorator');
 const Product = require('./products.js');
-
-
+const fs = require('fs');
 
 class ShoppingCart{
 
    constructor(){
        this.cart = [];
+       this.total = 0;
    }
 
+//parsing and saving as an array the products
 
-//filling the shopping cart with products from unpacked JSON
-//a bit overkill perhaps?
+unPack(){
+    const productsJSON = fs.readFileSync('./products.json', 'utf8');
+    const productObj = JSON.parse(productsJSON);
+    const productArray = productObj.selection;
+    return productArray;
+}
 
-addToCart(){
-let prodArray = unpackJSON();
+addToCart(prodArray){
 for(let obj of prodArray){
     let addedProduct = new Product(obj);
     this.cart.push(addedProduct);
-    }
+    }    
 }
-
-convertCartToEuro = () =>{
+//decorator function inside
+convertCartToEuro(){
 for(let s of this.cart) {
-    s.priceInEuro = convertToEuro(s.price, s.currency).toFixed(2);
+    s.priceInEuro = convertToEuro(s.price, s.currency);
+    
  }    
 }
 
 totalSumEuro(){
-    const onlyEuro = this.cart.map(obj => obj.priceInEuro);
-    this.total = onlyEuro.reduce((accumulator, currentValue) => { return accumulator + currentValue; } , 0);
+    let onlyEuro = this.cart.map(obj => obj.priceInEuro);
+    //to do fix 
+    let total = 0;
+    for(let i = 0; i < onlyEuro.length; i++) {total += parseFloat(onlyEuro[i])};
+    this.total = total;
+    return this.total;
+
 }  
 
 checkOut(){
     console.log(`Total cost is ${this.total}. Do you want to proceed with checkout?`);
 }
 }
+
+module.exports = ShoppingCart;

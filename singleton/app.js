@@ -28,9 +28,6 @@ game.playGame(turns);
 
  
 
-
-//a bit bizarre iterating through the gamer list and then calling
-    //methods based on looking up index...
     
 
 

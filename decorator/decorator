@@ -1,26 +1,18 @@
 const fs = require('fs');
-const filePath = './currency_conversions.json';
-const filePath2 = './products.json';
-
-//decorator understood as a wrapper around some code
-//the code for unpacking the currency rate is enhanced with the
-// ability to convert currency
-//unpacking the products JSON
-function unPackJSON(){
-    const productsJSON = fs.readFileSync(filePath2, {encoding: 'utf8', flag: 'r'});
-    const productArray = JSON.parse(productsJSON);
-    return productArray;
-}
+//https://www.freecodecamp.org/news/json-stringify-example-how-to-parse-a-json-object-with-javascript/
 
 
-function convertToEuro(price, currency){
-    const currencyJSON = fs.readFileSync(filePath, {encoding: 'utf8', flag: 'r'});
+//decorator in its simplest form as a wrapper around another piece of code
+
+
+function convertToEuro (price, currency){
+    const currencyJSON = fs.readFileSync('./currency_conversions.json', 'utf8',);
     const currencyRate = JSON.parse(currencyJSON);
-    const actualRate = currencyRate[currency + '_EU'];
-    return actualRate * price;
+    const actualRate = currencyRate[currency + "_EUR"];
+    return (actualRate * price).toFixed(2);
    }
  
-
- module.exports.convertToEuro = convertToEuro();
- module.exports.unPackJSON = unPackJSON();
+ 
+module.exports.convertToEuro = convertToEuro;
+ 
             
