@@ -13,6 +13,16 @@ node app.js
 
 ```
 
+Pistas de Omar:
+
+```
+calc = new Calculator(); // sum, sub, multi, div, => calc.(param), calc.sub(param) etc
+app = new Middleware(calc);  //app.sum(param), app.sub(param)
+// for (method in calc){this.method = for(method.par = par)} añadir como último middleware y ejecutar middleware.
+
+
+```
+
 - JSON **J**ava**S**cript **O**bject **N**otation
 - JSON property names must be in double-quoted (" ")
 - JSON do not allow trailing commas
