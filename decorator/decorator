@@ -1,0 +1,45 @@
+const conversionObj = (./requiere 'currency_conversion.json')
+
+function getPriceEuro(target) {
+    target.prototype.conversion() = 
+}
+
+
+class Article {
+    
+    constructor({name, price, currency}){
+    this.name = obj.name;
+    this.price = obj.price;
+    this.currency = obj.currency;
+    }
+    @getPriceEuro
+    getPrice() {
+        return this.price;
+    }
+}
+
+
+/*
+//front decorator in case we need to add 
+//aditional features
+//https://javascript.plainenglish.io/javascript-design-patterns-the-decorator-pattern-eaf6adc77cb7
+
+class ArticleDecorator {
+
+    constructor(article){
+        this.article = article;
+    }
+
+    getPrice(){
+        return this.article.getPrice();
+    }   
+
+}
+
+//concrete decorator adding the currency converting feature
+class ArticlePriceInEUDecorator extends ArticleDecorator{
+    getPrice(){
+        return 
+    }
+}
+*/
