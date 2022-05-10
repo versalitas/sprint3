@@ -12,17 +12,7 @@ node app.js
 
 ´´´
 
-else
 
-´´´
-´´´
-
-
-```
-
-node app.js
-
-```
 
 
 Singleton is an object/ class restricted to having a single, unique instance, 

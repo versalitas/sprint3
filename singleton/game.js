@@ -8,7 +8,6 @@ class Game {
     constructor(){
     //terrible matryoska?? 
     this.scoreBoard = new Score();
-    
     }
     
     //methods
