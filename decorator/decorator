@@ -1,4 +1,4 @@
-const conversionObj = (./requiere 'currency_conversion.json')
+const conversionObj = requiere('./currency_conversion.json');
 
 function getPriceEuro(target) {
     target.prototype.conversion() = 
