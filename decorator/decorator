@@ -1,35 +1,26 @@
-const conversionObj = requiere('./currency_conversion.json');
+const fs = require('fs');
+const filePath = './currency_conversions.json';
+const filePath2 = './products.json';
 
-function getPriceEuro(target) {
-    target.prototype.conversion() = 
+//decorator understood as a wrapper around some code
+//the code for unpacking the currency rate is enhanced with the
+// ability to convert currency
+//unpacking the products JSON
+function unPackJSON(){
+    const productsJSON = fs.readFileSync(filePath2, {encoding: 'utf8', flag: 'r'});
+    const productArray = JSON.parse(productsJSON);
+    return productArray;
 }
 
 
-class Article {
-    
-    constructor({name, price, currency}){
-    this.name = obj.name;
-    this.price = obj.price;
-    this.currency = obj.currency;
-    }
-    @getPriceEuro
-    getPrice() {
-        return this.price;
-    }
-}
+function convertToEuro(price, currency){
+    const currencyJSON = fs.readFileSync(filePath, {encoding: 'utf8', flag: 'r'});
+    const currencyRate = JSON.parse(currencyJSON);
+    const actualRate = currencyRate[currency + '_EU'];
+    return actualRate * price;
+   }
+ 
 
-    }
-
-    getPrice(){
-        return this.article.getPrice();
-    }   
-
-}
-
-//concrete decorator adding the currency converting feature
-class ArticlePriceInEUDecorator extends ArticleDecorator{
-    getPrice(){
-        return 
-    }
-}
-*/
+ module.exports.convertToEuro = convertToEuro();
+ module.exports.unPackJSON = unPackJSON();
+            
