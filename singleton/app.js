@@ -23,7 +23,7 @@ game.addPlayer("Louise");
 //const turns = prompt('How many turns do you want to play?')
 //turns = Number(turns);
 
-let turns = 7;
+let turns = 10;
 game.playGame(turns);
 
  
