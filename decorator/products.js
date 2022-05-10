@@ -5,10 +5,6 @@ class Products{
     this.price = obj.price;
     this.currency = obj.currency;
     }
-    
-    getPrice() {
-        return this.price;
-    }
 }
 
 module.exports = Products;
