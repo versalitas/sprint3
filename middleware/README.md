@@ -2,26 +2,16 @@
 Create a file with a calculator app (adds, subtracts, multiplies) receiving the parametres from a JSON. Create an external class that saves the middleware functions. Insert to the call middleware that executes square, cubic and divisional operations. Call the executions of adding, subtracting, and multiplying displaying the modifications of the initial values before the final result.
 
 
-
 ## Middleware
 
 Execute from a terminal initiated within the middleware folder.
-
 
 ```
 node app.js
 
 ```
 
-Pistas de Omar:
 
-```
-calc = new Calculator(); // sum, sub, multi, div, => calc.(param), calc.sub(param) etc
-app = new Middleware(calc);  //app.sum(param), app.sub(param)
-// for (method in calc){this.method = for(method.par = par)} añadir como último middleware y ejecutar middleware.
-
-
-```
 
 - JSON **J**ava**S**cript **O**bject **N**otation
 - JSON property names must be in double-quoted (" ")
