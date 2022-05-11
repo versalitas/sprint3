@@ -1,6 +1,7 @@
 
 // import all that is requiered 
 const Game = require('./game');
+
 //const prompt = require('prompt-sync')({sigint: true});
 
 // declare instance of the game
@@ -18,15 +19,17 @@ game.addPlayer("Hannah");
 game.addPlayer("Indy");
 game.addPlayer("Louise");
 
+game.addScore("Indy");
+console.log(game.scoreBoard);
 
 //Let the game start...!!!
 //const turns = prompt('How many turns do you want to play?')
 //turns = Number(turns);
-
+/*
 let turns = 10;
 game.playGame(turns);
 
- 
+ */
 
     
 
