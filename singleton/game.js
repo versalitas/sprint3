@@ -6,38 +6,46 @@ const Score = require("./score.js");
 class Game {
 
     constructor(){
-    //terrible matryoska?? 
+    
     this.scoreBoard = new Score();
+    this.players = [];
     }
     
     //methods
 
     //add player to game
     addPlayer(playerName) {
+        if(player.name === undefined){
         let player = new Player(playerName);
-        return this.scoreBoard.scoreCount.push(player);
+        this.players.push(player);
+    } else {
+        console.log('This username already exists');
     }
-    
-    //locates player index
-    findPlayerIndex(playerName){
-        return this.scoreBoard.scoreCount.findIndex(obj => obj.name === playerName);
+        
+        
     }
-    
+   
     //method addScore
-    addScore(playerName, score){ 
-        let playerIndex = this.findPlayerIndex(playerName);
+    addScore(playerName){ 
+        let score = Math.floor((Math.random() * 5 + 1) * -1);
+        let playerIndex = this.players.findIndex(n => {n.name === playerName});
+        console.log(playerIndex); //debugging
+        
         //random dice score generator
         if(playerIndex > -1) {
-            this.scoreBoard.scoreCount[playerIndex].score(score);
+           //console.log(this.scoreBoard.scoreCount[playerIndex].score);
+           this.scoreBoard.scoreCount[playerIndex].score += score;
+           //console.log(this.scoreBoard.scoreCount[playerIndex].score);
         }
     } 
-
+/*
    removeScore(playerName){
        let playerIndex = this.findPlayerIndex(playerName);
         //random generator
         let score = (Math.random() * 5 + 1) * -1;
+        //console.log(score);
         if(playerIndex > -1) {
-            this.scoreBoard.scoreCount[playerIndex].score(score);
+             this.scoreBoard.scoreCount[playerIndex].score += score;
         }
    }
 
@@ -72,11 +80,12 @@ class Game {
     if(turns > 0) {
     let isTongo = false;
         for(let i = 0; i < turns; i++){
+            
             //realmente estoy pescando el objeto del array del scoreboard?
             for(let player in this.scoreBoard.scoreCount){
                 isTongo = ((Math.random() * 10) === 1); 
-                isTongo? this.removeScore(player.name):this.addScore(player.name);
-            }
+                isTongo? this.removeScore(player.name):this.addScore(player.name)
+           } 
          }
        } else {
             console.log('Bye, bye');

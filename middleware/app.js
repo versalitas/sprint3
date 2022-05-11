@@ -1,23 +1,41 @@
-//transcripción de pistas crípticas de omar: 
+
+//https://stackoverflow.com/questions/39318027/how-to-write-a-middleware-class-in-node-js
+
+//transcripción de pistas (en su momento) crípticas de Omar: 
 //calc = new Calculator(); / sum, sub, multi, div, => calc.(param), calc.sub(param) etc
 //app = new Middleware(calc);  /app.sum(param), app.sub(param)
 // for (method in calc){this.method = for(method.par = par)} añadir como último middleware y ejecutar middleware.
 
-const Calculator = require('./calculator');
+
+const numbers  = require('./numbers.json');
+let Calculator = require('./calculator');
 const Middleware = require('./middleware');
 
-
-const calc = new Calculator();
+//instantiating new calculator/ target
+let calc = new Calculator();
 //setting target
-const app = new Middleware(calc);
+let app = new Middleware(calc);
 
-;
+//registering square function in the middleware manager
+app.use((req, next) => {
+    console.log(`The square of ${numbers.a} is ${Math.pow(numbers.a, 2)}`); 
+    next();
+});
+
+// dito cube
+app.use((req, next) => {
+    console.log(`The cube of ${numbers.a} is ${Math.pow(numbers.a, 3)}`); 
+    next();
+});
+// dito division
+app.use((req, next) => {
+    console.log(`Dividing ${numbers.a} by ${numbers.b} equals ${numbers.a / numbers.b}`); 
+    next();
+});
 
 
 
-//uso de clase target (OJO que se invoca el método de la clase target llamando al Manager -que no tiene explícitamente declarado el método-)
-console.log(app.add({a: 5, b: 10}));
-console.log(app.subtract({a: 10, b: 6}));
-console.log(app.multiply({a: 2, b: 3}));
 
-
+console.log(`Sum of ${numbers.a} and ${numbers.b} equals `+ app.add(numbers));
+console.log(`Subtracting ${numbers.b} from ${numbers.a} equals ` + app.subtract(numbers));
+console.log(`Multiplying ${numbers.b} with ${numbers.a} equals ` + app.multiply(numbers));

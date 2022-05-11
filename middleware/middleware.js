@@ -7,10 +7,10 @@ class Middleware {
       this.middlewares = [];
       this.req = {};
   
-    //step 1: obtain target objects PROTOTYPE
+    //step 1: obtain target objects PROTOTYPE and iterate through it to pass functions.
     //step 2: create the function dynamically (not through constructor)
     //step 3: map the valued for the entry to the manager with the necessary parametres for each call
-      const prototype = Object.getPrototypeOf(this.target);
+     const prototype = Object.getPrototypeOf(this.target);
       Object.getOwnPropertyNames(prototype).forEach(fn => {
         if (fn !== "constructor") return this.createFn(fn);
       });

@@ -12,18 +12,25 @@ node app.js
 ```
 ### Middleware
 
-USES:
-- parsing data
-- loggers
+SOME EXAMPLES:
+- parsing data (e.g. JSON from request)
+- loggers 
 - session managers
-- protection against attacks
+- protection against attacks (e.g. authentication check of protected routes)
+- return 404
 
 Middleware structure:
-request => middleware1 => middleware2 => path/route => resolution
 
-The middleware pattern consists of "chained" pieces of code executed inbetween 
-the user's initial request and its arrival at the server. 
-The exit point of each unit is the entry to the next.
+request => middleware1 => middleware2 => response;
+
+*request to route '/' => *SERVER (app.use(func) => app.get('/'.func)) => response
+
+The middleware pattern consists of code that runs (on the server) between getting a request and sending a response. 
+The exit point of each unit is the entry point to the next.
+
+*Order is importante since app.get('/'.func) sends the response to the route and no more code will be executed.
+
+.
 
 Example of implementation:
 ```

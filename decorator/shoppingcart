@@ -14,9 +14,7 @@ class ShoppingCart{
 
 unPack(){
     const productsJSON = fs.readFileSync('./products.json', 'utf8');
-    const productObj = JSON.parse(productsJSON);
-    const productArray = productObj.selection;
-    return productArray;
+    return JSON.parse(productsJSON);
 }
 
 addToCart(prodArray){
@@ -44,7 +42,7 @@ totalSumEuro(){
 }  
 
 checkOut(){
-    console.log(`Total cost is ${this.total}. Do you want to proceed with checkout?`);
+    console.log(`Total cost is ${this.total}. It's a steal!`);
 }
 }
 
