@@ -10,9 +10,43 @@ Execute from a terminal initiated within the middleware folder.
 node app.js
 
 ```
+### Middleware
 
+USES:
+- parsing data
+- loggers
+- session managers
+- protection against attacks
 
+Middleware structure:
+request => middleware1 => middleware2 => path/route => resolution
 
+The middleware pattern consists of "chained" pieces of code executed inbetween 
+the user's initial request and its arrival at the server. 
+The exit point of each unit is the entry to the next.
+
+Example of implementation:
+```
+const myLogger = function (req, res, next) {
+  console.log('LOGGED')
+  next()
+}
+```
+(*next is the third argument that is passed to the middleware function.)
+To load the middleware function, call *app.use(), specifying the middleware function.
+```
+//loads logger before path to root
+app.use(myLogger)
+
+//the path handler terminates the request
+app.get('/root', (req, res) => {
+  res.send('Hello World!')
+})
+```
+
+https://expressjs.com/en/guide/writing-middleware.html
+
+### JSON
 - JSON **J**ava**S**cript **O**bject **N**otation
 - JSON property names must be in double-quoted (" ")
 - JSON do not allow trailing commas

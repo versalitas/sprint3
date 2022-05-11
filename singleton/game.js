@@ -86,4 +86,4 @@ class Game {
 //export
 module.exports = Game; 
 
-//rememebering https://www.javascripttutorial.net/array/javascript-sort-an-array-of-objects/
+//remembering https://www.javascripttutorial.net/array/javascript-sort-an-array-of-objects/
