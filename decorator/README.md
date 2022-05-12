@@ -1,12 +1,10 @@
 Create an app that converts the cost for some articles in euros from other currencies. The app uses a decorator from a separate file that returns a currency converter function. The initial value is multiplied with a coeficent obtained from a JSON file.
 
 
-
 #Decorator
 
 Decorator Pattern keep your initial Objects or Components untouched while you can extend their functionality
 
-https://javascript.plainenglish.io/javascript-design-patterns-the-decorator-pattern-eaf6adc77cb7
 
 https://www.geeksforgeeks.org/what-are-decorators-and-how-are-they-used-in-javascript/
 

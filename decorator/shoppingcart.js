@@ -1,7 +1,7 @@
-
-const {convertToEuro} = require('./decorator');
-const Product = require('./products.js');
 const fs = require('fs');
+const {decoConvertToEuro} = require('./decorator.js');
+const Product = require('./products.js');
+
 
 class ShoppingCart{
 
@@ -17,23 +17,24 @@ unPack(){
     return JSON.parse(productsJSON);
 }
 
+//add selection to cart 
 addToCart(prodArray){
 for(let obj of prodArray){
     let addedProduct = new Product(obj);
     this.cart.push(addedProduct);
     }    
 }
-//decorator function inside
-convertCartToEuro(func){
-for(let s of this.cart) {
-    s.priceInEuro = convertToEuro(s.price, s.currency,func);
-    
- }    
+//passing the decorator function to the higher order function
+convertCartToEuro(decoConvertToEuro){
+    //iterating through the cart
+    for(let s of this.cart) {
+    //adding converted price
+    s.priceInEuro = decoConvertToEuro(s.price, s.currency);
+   }    
 }
 
 totalSumEuro(){
     let onlyEuro = this.cart.map(obj => obj.priceInEuro);
-    //to do fix 
     let total = 0;
     for(let i = 0; i < onlyEuro.length; i++) {total += parseFloat(onlyEuro[i])};
     this.total = total;
@@ -42,7 +43,7 @@ totalSumEuro(){
 }  
 
 checkOut(){
-    console.log(`Total cost is ${this.total}. It's a steal!`);
+    console.log(`Total cost is ${this.total} for ${this.cart} It's a steal!`);
 }
 }
 

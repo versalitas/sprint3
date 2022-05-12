@@ -5,8 +5,8 @@ class Player{
         this.score = 0;
         
    }
-   /*
-   //getter
+   /* 
+   
     get name(){
      return this._name;
     }

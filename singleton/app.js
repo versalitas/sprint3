@@ -19,17 +19,18 @@ game.addPlayer("Hannah");
 game.addPlayer("Indy");
 game.addPlayer("Louise");
 
-game.addScore("Indy");
-console.log(game.scoreBoard);
+
 
 //Let the game start...!!!
 //const turns = prompt('How many turns do you want to play?')
 //turns = Number(turns);
-/*
+
 let turns = 10;
 game.playGame(turns);
+game.scoreBoard.showScore();
+game.scoreBoard.showWinner();
 
- */
+
 
     
 
