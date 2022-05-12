@@ -15,8 +15,12 @@ class Score {
    return this.instance;
   }
   
-  getScore(scoreIndex){
-    return this.scoreCount
+ addScore
+  
+
+
+
+
   }
  
 }
