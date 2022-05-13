@@ -1,9 +1,22 @@
 
-Publisher - Subscriber
-Utilitzant RabbitMQ com a element imprescindible crea una queue on una classe Publisher publiqui missatges que siguin llegits per una classe Subscriber. Mostra l'emissió i recepció de cada missatge en consoles diferents
+
+Create a queue where a Publisher class publishes messages to be consumed by the Subscriber class. The emission and reception of each message are displayed on different consoles.
 
 
+#Publisher - Subscriber
 
-e.png
+Install rabbitmq https://www.rabbitmq.com/download.html 
+What is rabbitmq? https://www.youtube.com/watch?v=7rkeORD4jSw
+
+npm install amqplib
+
+run publisher from ./publisher folder
+```
+./publisher.js
+```
+run subscriber (consumer)
+```
+./subscriber.js
+```
 
 https://medium.com/@thebabscraig/javascript-design-patterns-part-2-the-publisher-subscriber-pattern-8fe07e157213
