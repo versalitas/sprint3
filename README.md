@@ -31,7 +31,8 @@ node app.js
 ```
 
 
-CALLBACK HELL
+#CALLBACK 
+
 Refactored code with promisify (node.js util module) and async and await. Seems to work...
 Execute from a terminal initiated within the callbackHell folder.
 
