@@ -50,4 +50,6 @@ class Publisher{
     }
 }
 
-    
+
+const publisher1 = new Publisher('DeliveryService');
+publisher1.sendMessage('Delivery Updates', 'Your package has been shipped off.');

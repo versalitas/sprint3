@@ -1,5 +1,4 @@
 
-
 Create a queue where a Publisher class publishes messages to be consumed by the Subscriber class. The emission and reception of each message are displayed on different consoles.
 
 
@@ -9,14 +8,14 @@ Install rabbitmq https://www.rabbitmq.com/download.html
 What is rabbitmq? https://www.youtube.com/watch?v=7rkeORD4jSw
 
 npm install amqplib
+## EXECUTING:
 
-run publisher from ./publisher folder
+
+run from terminal in ./publisher folder
 ```
-./publisher.js
+node app.js
 ```
-run subscriber (consumer)
-```
-./subscriber.js
-```
+
+
 
 https://medium.com/@thebabscraig/javascript-design-patterns-part-2-the-publisher-subscriber-pattern-8fe07e157213
