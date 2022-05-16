@@ -16,26 +16,20 @@ Specific themes:
 * Node Package Manager to manage packages (npm).
 
 The projects are executed with a terminal initiated within the pertinent folder.
+
 Best Case Scenario with everything installed correctly:
 ```
 node app.js
 ```
-Sod's Law Scenario:
 
-Initiate npm and install node util. (Applies to Callback Hell, 
+If app.js doesn't run in case extrenal modules are reuiered:
+### Sod's Law Scenario
+
+Initiate npm and install node util. 
 
 ```
 npm init 
 npm i util
 node app.js
 ```
-
-
-#CALLBACK 
-
-Refactored code with promisify (node.js util module) and async and await. Seems to work...
-Execute from a terminal initiated within the callbackHell folder.
-
-
-
 
