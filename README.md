@@ -17,13 +17,14 @@ Specific themes:
 
 The projects are executed with a terminal initiated within the pertinent folder.
 
-Best Case Scenario with everything installed correctly:
+#### Best Case Scenario with everything installed correctly:
 ```
 node app.js
 ```
 
 If app.js doesn't run in case extrenal modules are reuiered:
-### Sod's Law Scenario
+
+#### Sod's Law Scenario
 
 Initiate npm and install node util. 
 
