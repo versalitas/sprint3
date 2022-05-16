@@ -40,3 +40,10 @@ class Subscriber{
         }
 }
 
+const subscriber1 = new Subscriber("Hannah");
+subscriber1.readMessage(subscriber1.readMessage("Delivery Update"));
+
+
+
+
+
