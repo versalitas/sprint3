@@ -7,7 +7,7 @@ Execute from a terminal initiated within the callbackHell folder.
 
 Best Case Scenario with everything installed correctly:
 
-````
+```
 node app.js
 ```
 sources:
