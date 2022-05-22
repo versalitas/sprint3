@@ -23,7 +23,7 @@ const promReadDir = (inbox) => {
 }
 
 // readFile turned into promise
-const promReadFiles = (inbox, file) => {
+const promReadFile = (inbox, file) => {
   return new Promise((resolve, reject) => {
     readFile(join(inbox, file), "utf8", (error, data) => {
       if(err) reject("Error: File error");
@@ -31,6 +31,32 @@ const promReadFiles = (inbox, file) => {
     });
    });
 }
+
+//writefile turned into promise
+const promWriteFile = (outbox, file, data) => {
+  return new Promise((resolve, reject) => {
+    writeFile(join(outbox, file), reverseText(data), error => {
+      if(err) reject("Error: File could not be saved!");
+      resolve(console.log(`${file} was successfully saved in the outbox!`));
+    });
+  });
+}
+
+// puting the promises together
+
+const reverseReadWrite = async () => {
+  try {
+    const allFiles = await promReadDir(inbox);
+    for(let file in allFiles){
+      let data = await promReadFile(inbox, file)
+
+    }
+
+  }catch(err){
+    console.log(error);
+  }
+}
+
 
 
 
