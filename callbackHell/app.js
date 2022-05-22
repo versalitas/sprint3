@@ -1,7 +1,7 @@
 //refactoring with promises from sprint 1
 const {readdir, readFile, writeFile} = require("fs");
 
-const {join} = require("path");
+const {join, resolve} = require("path");
 
 const inbox = join(__dirname, "inbox");
 const outbox = join(__dirname, "outbox");
@@ -12,14 +12,24 @@ const reverseText = str =>
   .reverse()
   .join("");
 
-
+//readdir turned into promise
 const promReadDir = (inbox) => {
-  return new Promise((resolve, rejec) => {
-    readdir(inbox), err, files) => {
-      if(err) rej("Error: Folder inaccessible");
-      res
-    }
-  })
+  return new Promise((resolve, reject) => {
+    readdir(inbox, (err, files) => {
+      if(err) reject("Error: Folder inaccessible");
+      resolve(files);
+    });
+  });
+}
+
+// readFile turned into promise
+const promReadFiles = (inbox, file) => {
+  return new Promise((resolve, reject) => {
+    readFile(join(inbox, file), "utf8", (error, data) => {
+      if(err) reject("Error: File error");
+      resolve(data);
+    });
+   });
 }
 
 
