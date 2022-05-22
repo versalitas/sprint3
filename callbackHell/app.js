@@ -16,7 +16,7 @@ const reverseText = str =>
 const promReadDir = (inbox) => {
   return new Promise((resolve, reject) => {
     readdir(inbox, (err, files) => {
-      if(err) reject("Error: Folder inaccessible");
+      if(err) reject("error: Folder inaccessible");
       resolve(files);
     });
   });
@@ -25,8 +25,8 @@ const promReadDir = (inbox) => {
 // readFile turned into promise
 const promReadFile = (inbox, file) => {
   return new Promise((resolve, reject) => {
-    readFile(join(inbox, file), "utf8", (error, data) => {
-      if(err) reject("Error: File error");
+    readFile(join(inbox, file), "utf8", (err, data) => {
+      if(err) reject("error: File error");
       resolve(data);
     });
    });
@@ -35,8 +35,8 @@ const promReadFile = (inbox, file) => {
 //writefile turned into promise
 const promWriteFile = (outbox, file, data) => {
   return new Promise((resolve, reject) => {
-    writeFile(join(outbox, file), reverseText(data), error => {
-      if(err) reject("Error: File could not be saved!");
+    writeFile(join(outbox, file), data, err => {
+      if(err) reject("error: File could not be saved!");
       resolve(console.log(`${file} was successfully saved in the outbox!`));
     });
   });
@@ -48,27 +48,28 @@ const reverseReadWrite = async () => {
   try {
     const allFiles = await promReadDir(inbox);
     for(let file in allFiles){
-      let data = await promReadFile(inbox, file)
-
-    }
-
+      let data = await promReadFile(inbox, file);
+      //should reversedata also be a promise?
+      let reverseData = reverseText(data).catch(err => console.error(err));
+      await promWriteFile(reverseData);
+   }
   }catch(err){
-    console.log(error);
+    console.log(err);
   }
 }
 
-
+reverseReadWrite();
 
 
 /* original callbackhell
 // Read and reverse contents of text files in a directory
-readdir(inbox, (error, files) => {
-  if (error) return console.log("Error: Folder inaccessible");
+readdir(inbox, (err, files) => {
+  if (err) return console.log("err: Folder inaccessible");
   files.forEach(file => {
-    readFile(join(inbox, file), "utf8", (error, data) => {
-      if (error) return console.log("Error: File error");
-      writeFile(join(outbox, file), reverseText(data), error => {
-        if (error) return console.log("Error: File could not be saved!");
+    readFile(join(inbox, file), "utf8", (err, data) => {
+      if (err) return console.log("err: File err");
+      writeFile(join(outbox, file), reverseText(data), err => {
+        if (err) return console.log("err: File could not be saved!");
         console.log(`${file} was successfully saved in the outbox!`);
       });
     });
@@ -101,7 +102,7 @@ const reverseText = str =>
  
 // en sprint 1 me topé con promisify. 
 // muy cómodo pero no sé cómo mantener
-// los mensajes de error más diversificados
+// los mensajes de err más diversificados
 // del resultado
 const pReaddir = promisify(readdir);
 const pReadFile = promisify(readFile);
@@ -118,7 +119,7 @@ const reverseReadSave = async () => {
           console.log(`${file} reversed and saved in the outbox.`);
       }
   } catch (err) {
-      console.log("Some highly expected error.", err.message);
+      console.log("Some highly expected err.", err.message);
   }
 }
 
