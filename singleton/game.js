@@ -9,7 +9,7 @@ const Score = require("./score");
 class Game {
     constructor(){
         
-        this.players = [];
+        
         this.scoreBoard = new Score();
         
     }
@@ -25,7 +25,7 @@ class Game {
     }
 
 
-
+/* reducing 
   playGame(turns){
     if(turns > 0) {
     let isTongo = false;
@@ -44,6 +44,7 @@ class Game {
             console.log('Bye, bye');
        }   
   }
+  */
 }
 module.exports = Game;
 //remembering https://www.javascripttutorial.net/array/javascript-sort-an-array-of-objects/
