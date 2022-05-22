@@ -1,10 +1,15 @@
 
+/* first sketch class Game {players[], scoreBoard (tipo Score), addPlayer(), playGame()},
+class Score {scoreCount[], updateScore(), showWinner(), showScore()}.
+classPlayer {name}*/
+
 const Player = require("./player");
 const Score = require("./score");
 
 class Game {
     constructor(){
         
+        this.players = [];
         this.scoreBoard = new Score();
         
     }
