@@ -1,7 +1,7 @@
-//refactoring with promises from sprint 1
+//refactoring with promises and async/await from sprint 1
 const {readdir, readFile, writeFile} = require("fs");
 
-const {join, resolve} = require("path");
+const {join} = require("path");
 
 const inbox = join(__dirname, "inbox");
 const outbox = join(__dirname, "outbox");
@@ -12,31 +12,31 @@ const reverseText = str =>
   .reverse()
   .join("");
 
-//readdir turned into promise
+//readdir turned into promise resolves with the files
 const promReadDir = (inbox) => {
   return new Promise((resolve, reject) => {
     readdir(inbox, (err, files) => {
-      if(err) reject("error: Folder inaccessible");
+      if(err) reject("Error: Folder inaccessible");
       resolve(files);
     });
   });
 }
 
-// readFile turned into promise
+// readFile turned into promise resolves reading the data from the files
 const promReadFile = (inbox, file) => {
   return new Promise((resolve, reject) => {
     readFile(join(inbox, file), "utf8", (err, data) => {
-      if(err) reject("error: File error");
+      if(err) reject("Error: File error");
       resolve(data);
     });
    });
 }
 
-//writefile turned into promise
+//writefile turned into promise resolves with message 
 const promWriteFile = (outbox, file, data) => {
   return new Promise((resolve, reject) => {
     writeFile(join(outbox, file), data, err => {
-      if(err) reject("error: File could not be saved!");
+      if(err) reject("Error: File could not be saved!");
       resolve(console.log(`${file} was successfully saved in the outbox!`));
     });
   });
@@ -46,19 +46,21 @@ const promWriteFile = (outbox, file, data) => {
 
 const reverseReadWrite = async () => {
   try {
-    const allFiles = await promReadDir(inbox);
-    for(let file in allFiles){
-      let data = await promReadFile(inbox, file);
-      //should reversedata also be a promise?
-      let reverseData = reverseText(data).catch(err => console.error(err));
-      await promWriteFile(reverseData);
-   }
-  }catch(err){
-    console.log(err);
+    let allFiles = await promReadDir(inbox);
+      for(let file of allFiles){
+        let data = await promReadFile(inbox, file);
+        let reverseData = reverseText(data);
+        await promWriteFile(outbox, file, reverseData);
+      }
+    } catch (err) {
+      console.error(err);
   }
 }
 
 reverseReadWrite();
+
+
+
 
 
 /* original callbackhell
