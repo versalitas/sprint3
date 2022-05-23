@@ -1,5 +1,5 @@
 
-///AAAAArggg...
+// still quite callbackish... I'm afraid...
 
 const {readdir, readFile, writeFile} = require("fs");
 
@@ -15,24 +15,14 @@ const reverseText = str =>
   .join("");
 
 
-  
-/*
-const getFiles = () => {
-return new Promise(function(resolve,reject){
-  readdir(inbox, (err,files) =>{
-    if (err) reject(err)
-    else resolve(files)
-  })
- })
-}*/
+
 const manipulateFiles = (err, files) => {
   if(err) return console.log("Error: Folder inaccessible");
-  files.foreach(readReverseWrite);
+  files.forEach(file => readReverseWrite(file));
 }
 
 const readReverseWrite = (file) => {
-  //debug console.log(files);
-  
+  //debug console.log(file);
   readFile(join(inbox, file), "utf8", (err, data) => {
   if (err) {return console.log("err: File err");
   } else { 
@@ -45,14 +35,4 @@ const readReverseWrite = (file) => {
  })
  }
 
-
-///aaargggggg
-
-/*
-getFiles()
-.then(files => {
-  readReverseWrite(files)}) */
-
-
-
-
+ readdir(inbox, manipulateFiles);
