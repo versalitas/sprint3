@@ -25,14 +25,13 @@ return new Promise(function(resolve,reject){
   })
  })
 }*/
-const getFiles = () => {
-  
-
+const manipulateFiles = (err, files) => {
+  if(err) return console.log("Error: Folder inaccessible");
+  files.foreach(readReverseWrite);
 }
 
-const readReverseWrite = (files) => {
-  for(let file of files) {
-  console.log(files);
+const readReverseWrite = (file) => {
+  //debug console.log(files);
   
   readFile(join(inbox, file), "utf8", (err, data) => {
   if (err) {return console.log("err: File err");
