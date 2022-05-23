@@ -1,5 +1,5 @@
-
-// still quite callbackish... I'm afraid...
+// Node utils revisited
+// still quite callbackish... but I'm out of ideas.
 
 const {readdir, readFile, writeFile} = require("fs");
 
