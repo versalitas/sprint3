@@ -12,7 +12,31 @@ const reverseText = str =>
   .reverse()
   .join("");
 
-//readdir turned into promise resolves with the files
+
+  const reverseReadWrite = async () => {
+    
+    //readdir
+    try {
+      let files = await readdir(inbox);
+    } catch (err) {
+      return console.error("Error: Folder inaccessible");
+    }
+   
+     //readFile
+    
+     try {
+      
+    } catch (err) {
+      return console.error("Error: Folder inaccessible");
+    }
+
+
+   //writeFile
+
+
+
+/*
+  //readdir turned into promise resolves with the files
 const promReadDir = (inbox) => {
   return new Promise((resolve, reject) => {
     readdir(inbox, (err, files) => {
@@ -56,7 +80,7 @@ const reverseReadWrite = async () => {
       console.error(err);
   }
 }
-
+*/
 reverseReadWrite();
 
 
