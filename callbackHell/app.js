@@ -13,26 +13,45 @@ const reverseText = str =>
   .join("");
 
 
-  const reverseReadWrite = async () => {
+  const reverseReadWrite = () => {
+     
+    let files;
+    let data;
+    let reverseData;
     
-    //readdir
+     //readdir
     try {
-      let files = await readdir(inbox);
+      files = readdir(inbox);
     } catch (err) {
       return console.error("Error: Folder inaccessible");
     }
    
-     //readFile
-    
-     try {
+     //iterate through the files
+      files.forEach(file => {
+        
+        //read files  
+        try { 
+          data = readFile(join(inbox, file), "utf8")
+        } catch (err) {
+          return console.log("Error: File error");
+        }
+        //reverse text
+        let reverseData = reverseText(data);
+        
+        //write reversed text to file
+        try { 
+          writeFile(join(outbox, file), reverseData);
+        } catch (err) {
+          return console.log("Error: File could not be saved!");
+        }
+        
+        console.log(`${file} was successfully saved in the outbox!`);
+      }
       
-    } catch (err) {
-      return console.error("Error: Folder inaccessible");
-    }
+    
 
 
-   //writeFile
-
+  
 
 
 /*
