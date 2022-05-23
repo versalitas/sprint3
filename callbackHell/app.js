@@ -44,7 +44,6 @@ const readReverseWrite = (file) => {
   }
  })
  }
-}
 
 
 ///aaargggggg
